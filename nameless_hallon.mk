@@ -15,6 +15,15 @@
 # Inherit device configuration
 $(call inherit-product, device/semc/hallon/full_hallon.mk)
 
+# Inherit APNs list
+$(call inherit-product, vendor/nameless/config/apns.mk)
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/nameless/config/common.mk)
+
 # Device identifier. This must come after all inclusions
 PRODUCT_RELEASE_NAME := hallon
 PRODUCT_DEVICE := hallon
